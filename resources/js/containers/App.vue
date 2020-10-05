@@ -4,11 +4,8 @@
   >
     <div class="bg-mantis-500 text-white">
       <div class="container mx-auto py-1 md:py-2 px-4 text-center">
-        <span class="font-semibold">New to Sports Watchlist?</span>
-        <span
-          >Click here to see why we are your #1 source to get live updates on
-          your favorite sports games!</span
-        >
+        <span class="font-semibold"></span>
+        <span></span>
       </div>
     </div>
     <header>
