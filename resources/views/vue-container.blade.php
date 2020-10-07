@@ -37,6 +37,7 @@
     <script src="{{ mix('js/vendor.js') }}" defer></script>
     <script src="{{ mix('js/app.js') }}" defer></script>
     <!-- Global site tag (gtag.js) - Google Ads: 581289988 --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-581289988"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-581289988'); </script>
+    <!-- Event snippet for Landing Page Page view conversion page --> <script> gtag('event', 'conversion', {'send_to': 'AW-581289988/XJlpCKrltOEBEISQl5UC'}); </script>
   </head>
   <body>
     <div id="app"></div>
