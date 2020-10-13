@@ -9,38 +9,38 @@
         <div v-if="games.length" class="mt-6">
           <div
             v-for="game in results"
-            :key="'game' + game.game_id"
+            :key="game.GameId"
             class="mt-6 first:mt-0 w-full"
           >
             <NBAGameListItem
               v-if="game.game_type === 'nba'"
               :initialGameData="game"
-              :key="game.game_id"
+              :key="game.GameId"
             />
             <MLBGameListItem
               v-if="game.game_type === 'mlb'"
               :initialGameData="game"
-              :key="game.game_id"
+              :key="game.GameId"
             />
             <NFLGameListItem
               v-if="game.game_type === 'nfl'"
               :initialGameData="game"
-              :key="game.game_id"
+              :key="game.GameId"
             />
             <NHLGameListItem
               v-if="game.game_type === 'nhl'"
               :initialGameData="game"
-              :key="game.game_id"
+              :key="game.GameId"
             />
             <NCAABGameListItem
               v-if="game.game_type === 'ncaab'"
               :initialGameData="game"
-              :key="game.game_id"
+              :key="game.GameId"
             />
             <NCAAFGameListItem
               v-if="game.game_type === 'ncaaf'"
               :initialGameData="game"
-              :key="game.game_id"
+              :key="game.GameId"
             />
           </div>
         </div>
@@ -138,7 +138,7 @@ export default {
     },
     sortGames(method) {
       if (method === "rot") {
-        this.results = this.results.sort((game1, game2) => {
+        this.games = this.games.sort((game1, game2) => {
           if (game1.away_team.rotation_number === null) return 1;
           if (game2.away_team.rotation_number === null) return -1;
 
@@ -147,7 +147,7 @@ export default {
           );
         });
       } else if (method === "time") {
-        this.results = this.results.sort((game1, game2) => {
+        this.games = this.games.sort((game1, game2) => {
           if (game1.game_time === null) return 1;
           if (game2.game_time === null) return -1;
 
