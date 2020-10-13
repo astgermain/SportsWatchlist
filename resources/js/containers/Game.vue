@@ -9,38 +9,38 @@
         <div v-if="games.length" class="mt-6">
           <div
             v-for="game in results"
-            :key="game.GameId"
+            :key="'game' + game.game_id"
             class="mt-6 first:mt-0 w-full"
           >
             <NBAGameListItem
               v-if="game.game_type === 'nba'"
               :initialGameData="game"
-              :key="game.GameId"
+              :key="game.game_id"
             />
             <MLBGameListItem
               v-if="game.game_type === 'mlb'"
               :initialGameData="game"
-              :key="game.GameId"
+              :key="game.game_id"
             />
             <NFLGameListItem
               v-if="game.game_type === 'nfl'"
               :initialGameData="game"
-              :key="game.GameId"
+              :key="game.game_id"
             />
             <NHLGameListItem
               v-if="game.game_type === 'nhl'"
               :initialGameData="game"
-              :key="game.GameId"
+              :key="game.game_id"
             />
             <NCAABGameListItem
               v-if="game.game_type === 'ncaab'"
               :initialGameData="game"
-              :key="game.GameId"
+              :key="game.game_id"
             />
             <NCAAFGameListItem
               v-if="game.game_type === 'ncaaf'"
               :initialGameData="game"
-              :key="game.GameId"
+              :key="game.game_id"
             />
           </div>
         </div>
@@ -61,7 +61,6 @@ import NFLGameListItem from "./../components/NFLGameListItem";
 import NHLGameListItem from "./../components/NHLGameListItem";
 import NCAABGameListItem from "./../components/NCAABGameListItem";
 import NCAAFGameListItem from "./../components/NCAAFGameListItem";
-
 export default {
   props: ["league"],
   components: {
@@ -87,11 +86,9 @@ export default {
   },
   created() {
     this.getGames();
-
     window.events.$on("sort", method => {
       this.sortGames(method);
     });
-
     window.events.$on("search", e => {
       this.results = this.games.filter(game => {
         return (
@@ -102,7 +99,6 @@ export default {
         );
       });
     });
-
     window.events.$on("clear-search", () => (this.results = this.games));
   },
   computed: {
@@ -117,7 +113,6 @@ export default {
     getGames() {
       this.loading = true;
       const formattedDate = this.getFormattedDate();
-
       this.$http
         .get(`/api/${this.league}/gamesByDate/${formattedDate}`)
         .then(response => {
@@ -138,19 +133,17 @@ export default {
     },
     sortGames(method) {
       if (method === "rot") {
-        this.games = this.games.sort((game1, game2) => {
+        this.results = this.results.sort((game1, game2) => {
           if (game1.away_team.rotation_number === null) return 1;
           if (game2.away_team.rotation_number === null) return -1;
-
           return (
             game1.away_team.rotation_number - game2.away_team.rotation_number
           );
         });
       } else if (method === "time") {
-        this.games = this.games.sort((game1, game2) => {
+        this.results = this.results.sort((game1, game2) => {
           if (game1.game_time === null) return 1;
           if (game2.game_time === null) return -1;
-
           return moment(game1.game_time).isBefore(moment(game2.game_time))
             ? -1
             : 1;
