@@ -21,6 +21,15 @@
                 />
               </router-link>
             </div>
+            <div>
+              <a href="http://www.thewhalepicks.com/twp/swl">
+                <img
+                  class="h-12"
+                  src="./../assets/images/tbanner1.gif"
+                  alt="Sports Watchlist"
+                />
+              </a>
+            </div>
             <nav class="hidden lg:flex text-sm">
               <router-link to="/my-watchlist">My Watchlist</router-link>
               <div v-if="loggedIn" class="ml-4">
