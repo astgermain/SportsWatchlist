@@ -33,7 +33,7 @@
           <div>
               <a href="http://www.thewhalepicks.com/twp/swl">
                 <img
-                  class="h-12"
+                  class=""
                   src="./../assets/images/rbanner1.gif"
                   alt="Sports Watchlist"
                 />
