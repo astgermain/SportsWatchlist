@@ -15,7 +15,7 @@
             <div>
               <router-link to="/">
                 <img
-                  class="h-12"
+                  class="h-auto lg:h-12 xl:h-12"
                   src="./../assets/images/logo.png"
                   alt="Sports Watchlist"
                 />
@@ -24,7 +24,7 @@
             <div>
               <a href="http://www.thewhalepicks.com/twp/swl">
                 <img
-                  class="h-12"
+                  class="h-auto"
                   src="./../assets/images/tbanner1.gif"
                   alt="Sports Watchlist"
                 />
@@ -328,6 +328,11 @@
         </nav>
       </div>
       <div class="bg-swl-black-lighter text-white py-8">
+        <div>
+          <a href="http://www.thewhalepicks.com/twp/swl">
+            <img src="/images/tbanner1.gif?a33e2550caa4b1b510f560ed261ef9a4" alt="Sports Watchlist" class="h-20 mx-auto py-1">
+          </a>
+        </div>
         <div class="container mx-auto px-4 text-center">
           <div class="inline-block uppercase tracking-wide font-semibold">
             <div class="flex">
