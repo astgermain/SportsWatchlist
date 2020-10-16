@@ -30,6 +30,16 @@
         </v-calendar>
 
         <div class="mt-4 px-6">
+          <div>
+              <a href="http://www.thewhalepicks.com/twp/swl">
+                <img
+                  class="h-12"
+                  src="./../assets/images/rbanner1.gif"
+                  alt="Sports Watchlist"
+                />
+              </a>
+            </div>
+        <!--
           <div
             v-for="banner in banners"
             :key="banner.id"
@@ -39,6 +49,7 @@
               <img class="w-full" :src="`/${banner.path}`" :alt="banner.url" />
             </a>
           </div>
+          -->
         </div>
       </div>
     </aside>
